@@ -30,18 +30,38 @@
 <header class="site-head">
   <div class="wrap head-in">
     <a class="logo" href="/"><span class="logo-mark">V</span>XCOR · VapePL</a>
-    <nav aria-label="Nawigacja główna">
-      <a href="/produkty/">Produkty</a>
-      <a href="/#modele">Modele</a>
-      <a href="/blog/">Blog</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/o-xcor/">O marce</a>
-    </nav>
+    <nav aria-label="Nawigacja główna" class="head-nav"><a href="/produkty/">Produkty</a><a href="/#modele">Modele</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/o-xcor/">O marce</a></nav>
     <a class="head-cta" href="https://vapepl.com/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=header" target="_blank" rel="noopener">Kup na VapePL.COM →</a>
+    <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+    </button>
   </div>
 </header>
-<div class="trust-bar wrap" role="note"><span>&#10003; Wysyłka z Polski — realizacja 24–48h</span><span>&#10003; 30 dni na zwrot</span><span>&#10003; Rabaty ilościowe do −20%</span><span>&#10003; Tylko dla osób 18+</span></div>
+<div class="nav-drawer" id="mobile-menu" hidden>
+  <div class="nav-drawer-backdrop" data-nav-close></div>
+  <div class="nav-drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="nav-drawer-head">
+      <span class="nav-drawer-title">Menu</span>
+      <button class="nav-drawer-close" type="button" aria-label="Zamknij menu" data-nav-close>×</button>
+    </div>
+    <nav class="nav-drawer-links" aria-label="Menu mobilne"><a href="/produkty/">Produkty</a><a href="/#modele">Modele</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/o-xcor/">O marce</a></nav>
+    <a class="btn-buy lg nav-drawer-cta" href="https://vapepl.com/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=drawer" target="_blank" rel="noopener">Kup na VapePL.COM →</a>
+  </div>
+</div>
 <main class="wrap">
+<script>
+(function(){
+  var drawer=document.getElementById("mobile-menu");
+  var toggle=document.querySelector(".nav-toggle");
+  function open(){drawer.hidden=false;toggle.setAttribute("aria-expanded","true");document.body.classList.add("nav-open");}
+  function close(){drawer.hidden=true;toggle.setAttribute("aria-expanded","false");document.body.classList.remove("nav-open");}
+  toggle.addEventListener("click",function(){drawer.hidden?open():close();});
+  drawer.addEventListener("click",function(e){if(e.target.hasAttribute("data-nav-close"))close();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!drawer.hidden)close();});
+  // 同页锚点跳转不会卸载页面，需显式关闭抽屉
+  drawer.querySelectorAll(".nav-drawer-links a").forEach(function(a){a.addEventListener("click",close);});
+})();
+</script>
 <section class="hero"><div class="hero-grid">
   <div class="hero-copy">
     <span class="kicker">Przewodnik marki · XCOR</span>
@@ -90,7 +110,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-banana-icecream" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-banana-icecream" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-blueberry-raspberry/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — BLUEBERRY RASPBERRY" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -101,7 +121,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-blueberry-raspberry" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-blueberry-raspberry" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-lemon-lime/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — LEMON LIME" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -112,7 +132,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-lemon-lime" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-lemon-lime" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="slodycze" data-fam="mix">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-love-66/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Love 66" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -123,7 +143,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-love-66" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-love-66" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-mango-ice/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Mango Ice" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -134,7 +154,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-mango-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-mango-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-peach-ice/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — PEACH ICE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -145,7 +165,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-peach-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-peach-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-sour-apple/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Sour Apple" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -156,7 +176,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-sour-apple" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-sour-apple" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-strawberry-ice/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — STRAWBERRY ICE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -167,7 +187,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-strawberry-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-strawberry-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article></div>
 </section><div id="smaki" class="anchor"></div><section class="block" id="kat-owocowe" data-cat-sec="owocowe">
@@ -181,7 +201,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-blueberry-cherry-cranberry" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-blueberry-cherry-cranberry" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-hawaii-pro-23000-puffs-lemon-lime/"><img src="/assets/img/f81dbc58354675af-480.webp" alt="XCOR Hawaii PRO 23000 PUFFS — LEMON LIME" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -192,7 +212,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-lemon-lime" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-lemon-lime" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="mix">
   <a class="card-media" href="/produkt/xcor-hawaii-pro-23000-puffs-mixed-berries/"><img src="/assets/img/f81dbc58354675af-480.webp" alt="XCOR Hawaii PRO 23000 PUFFS — Mixed Berries" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -203,7 +223,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-mixed-berries" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-mixed-berries" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-hawaii-pro-23000-puffs-peach/"><img src="/assets/img/f81dbc58354675af-480.webp" alt="XCOR Hawaii PRO 23000 PUFFS — PEACH" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -214,7 +234,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-peach" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-peach" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-hawaii-pro-23000-puffs-sakura-grape/"><img src="/assets/img/f81dbc58354675af-480.webp" alt="XCOR Hawaii PRO 23000 PUFFS — SAKURA GRAPE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -225,7 +245,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-sakura-grape" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-sakura-grape" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-hawaii-pro-23000-puffs-sour-apple/"><img src="/assets/img/f81dbc58354675af-480.webp" alt="XCOR Hawaii PRO 23000 PUFFS — Sour Apple" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -236,7 +256,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-sour-apple" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-sour-apple" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-blue-sour-raspberry/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Blue Sour Raspberry" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -247,7 +267,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-blue-sour-raspberry" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-blue-sour-raspberry" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-blueberry-cherry-cranberry/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — BLUEBERRY CHERRY CRANBERRY" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -258,7 +278,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-blueberry-cherry-cranberry" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-blueberry-cherry-cranberry" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-bluesour-raspberry/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Bluesour raspberry" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -269,7 +289,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-bluesour-raspberry" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-bluesour-raspberry" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-lemon-lime/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — LEMON LIME" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -280,7 +300,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-lemon-lime" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-lemon-lime" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="mix">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-mix-berries/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — MIX BERRIES" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -291,7 +311,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-mix-berries" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-mix-berries" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-peach/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — PEACH" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -302,7 +322,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-peach" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-peach" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-sakura-grape/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — SAKURA GRAPE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -313,7 +333,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-sakura-grape" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-sakura-grape" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-sour-apple/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Sour Apple" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -324,7 +344,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-sour-apple" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-sour-apple" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-blueberry-raspberry/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — BLUEBERRY RASPBERRY" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -335,7 +355,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-blueberry-raspberry" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-blueberry-raspberry" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-lemon-lime/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — LEMON LIME" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -346,7 +366,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-lemon-lime" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-lemon-lime" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-sour-apple/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Sour Apple" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -357,7 +377,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-sour-apple" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-sour-apple" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-strawberry-kiwi/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Strawberry Kiwi" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -368,7 +388,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-strawberry-kiwi" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-strawberry-kiwi" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-strawberry-watermelon/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Strawberry Watermelon" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -379,7 +399,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-strawberry-watermelon" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-strawberry-watermelon" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="owocowe" data-fam="mix">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-tobacoo/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Tobacoo" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -390,7 +410,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-tobacoo" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-tobacoo" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article></div>
   </section><section class="block" id="kat-ice-menthol" data-cat-sec="ice-menthol">
@@ -404,7 +424,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-cool-mint" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-cool-mint" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-hawaii-pro-23000-puffs-grape-ice/"><img src="/assets/img/f81dbc58354675af-480.webp" alt="XCOR Hawaii PRO 23000 PUFFS — Grape ice" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -415,7 +435,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-grape-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-grape-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-hawaii-pro-23000-puffs-strawberry-lce/"><img src="/assets/img/f81dbc58354675af-480.webp" alt="XCOR Hawaii PRO 23000 PUFFS — Strawberry lce" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -426,7 +446,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-strawberry-lce" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-strawberry-lce" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-hawaii-pro-23000-puffs-watermelon-ice/"><img src="/assets/img/f81dbc58354675af-480.webp" alt="XCOR Hawaii PRO 23000 PUFFS — WATERMELON ICE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -437,7 +457,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-watermelon-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-hawaii-pro-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-hawaii-pro-23000-puffs-watermelon-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice mint">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-cool-mint/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Cool Mint" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -448,7 +468,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-cool-mint" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-cool-mint" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-fizzy-cherry-lce/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Fizzy Cherry lce" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -459,7 +479,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-fizzy-cherry-lce" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-fizzy-cherry-lce" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-grape-ice/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Grape ice" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -470,7 +490,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-grape-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-grape-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-lemon-frozen/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Lemon Frozen" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -481,7 +501,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-lemon-frozen" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-lemon-frozen" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="fruit mint">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-lemon-menthol/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Lemon Menthol" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -492,7 +512,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-lemon-menthol" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-lemon-menthol" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice mint">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-menthol-ice/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Menthol Ice" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -503,7 +523,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-menthol-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-menthol-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-strawberry-ice/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — STRAWBERRY ICE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -514,7 +534,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-strawberry-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-strawberry-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-watermelon-frozen/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Watermelon Frozen" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -525,7 +545,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-watermelon-frozen" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-watermelon-frozen" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-watermelon-ice/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — WATERMELON ICE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -536,7 +556,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-watermelon-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-watermelon-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="fruit mint">
   <a class="card-media" href="/produkt/xcor-tyrant-23000-puffs-watermelon-menthol/"><img src="/assets/img/3b0a43adcdec34f7-480.webp" alt="XCOR TYRANT 23000 PUFFS — Watermelon Menthol" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -547,7 +567,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-watermelon-menthol" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-watermelon-menthol" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-mango-ice/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Mango Ice" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -558,7 +578,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-mango-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-mango-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-peach-ice/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — PEACH ICE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -569,7 +589,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-peach-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-peach-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-strawberry-ice/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — STRAWBERRY ICE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -580,7 +600,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-strawberry-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-strawberry-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="ice-menthol" data-fam="ice fruit">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-watermelon-ice/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — WATERMELON ICE" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -591,7 +611,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-watermelon-ice" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-watermelon-ice" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article></div>
   </section><section class="block" id="kat-slodycze" data-cat-sec="slodycze">
@@ -605,7 +625,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-banana-icecream" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-banana-icecream" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article><article class="card" data-cat="slodycze" data-fam="mix">
   <a class="card-media" href="/produkt/xcor-max-50000-puffs-love-66/"><img src="/assets/img/0322e582a82c3bab-480.webp" alt="XCOR Max 50000 PUFFS — Love 66" loading="lazy" decoding="async" fetchpriority="low" width="240" height="240"></a>
@@ -616,7 +636,7 @@
       <span class="price">90 zł</span>
       <span class="price-old">100 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-love-66" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-max-50000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-max-50000-puffs-love-66" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article></div>
   </section><section class="block" id="kat-napoje" data-cat-sec="napoje">
@@ -630,7 +650,7 @@
       <span class="price">55 zł</span>
       <span class="price-old">60 zł</span>
     </div>
-    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-berry-lemonade" target="_blank" rel="noopener">Kup na VapePL</a>
+    <a class="btn-buy sm" href="https://vapepl.com/product/xcor-tyrant-23000-puffs/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=card-xcor-tyrant-23000-puffs-berry-lemonade" target="_blank" rel="noopener">Kup na VapePL.COM</a>
   </div>
 </article></div>
   </section><section class="block alt" id="modele">
@@ -832,6 +852,27 @@
     </article></div>
   </div>
 </section><section class="block"><div class="block-head"><div><span class="kicker sm">Poradniki</span><h2>Blog XCOR</h2></div><a class="more" href="/blog/">Wszystkie wpisy →</a></div><div class="article-grid"><article class="article-card">
+  <a class="article-link" href="/blog/cena-jednorazowki-za-ml-stag-xcor-max-i-leopard/">
+    <span class="article-kicker">2026-10-11</span>
+    <h3>Cena jednorazówki za ml: STAG, XCOR MAX i LEOPARD</h3>
+    <p>Krótka odpowiedź: za mililitr najtaniej wychodzi STAG BAR, bo 150 zł na 108 ml daje 1,39 zł/ml.</p>
+    <span class="article-more">Czytaj dalej <span aria-hidden="true">→</span></span>
+  </a>
+</article><article class="article-card">
+  <a class="article-link" href="/blog/e-papierosy-xcor-dubai-night-ile-zaplacisz/">
+    <span class="article-kicker">2026-10-01</span>
+    <h3>E-papierosy XCOR Dubai Night: ile zapłacisz</h3>
+    <p>Krótka odpowiedź: najbliższy profil smakowy daje wariant Tobacco w XCOR Max 50K. Przy tempie 350 pufów dziennie najtańszy zapas na 90 dni to HIFANCY</p>
+    <span class="article-more">Czytaj dalej <span aria-hidden="true">→</span></span>
+  </a>
+</article><article class="article-card">
+  <a class="article-link" href="/blog/e-papierosy-xcor-w-testach-max-tyrant-i-hawaii-pro/">
+    <span class="article-kicker">2026-09-05</span>
+    <h3>E-papierosy XCOR w testach: Max, Tyrant i Hawaii PRO</h3>
+    <p>Szukasz urządzenia, które nie rozładuje się w połowie tygodnia i nie zaskoczy Cię pustym zbiornikiem w najgorszym momencie?</p>
+    <span class="article-more">Czytaj dalej <span aria-hidden="true">→</span></span>
+  </a>
+</article><article class="article-card">
   <a class="article-link" href="/blog/hifancy-50k-vs-xcor-max-drabina-50k-w-liczbach/">
     <span class="article-kicker">2026-10-18</span>
     <h3>HIFANCY 50K vs XCOR Max: drabina 50K w liczbach</h3>
@@ -846,31 +887,10 @@
     <span class="article-more">Czytaj dalej <span aria-hidden="true">→</span></span>
   </a>
 </article><article class="article-card">
-  <a class="article-link" href="/blog/xcor-12k-przewodnik-po-jednomrazowym-e-papierosie/">
-    <span class="article-kicker">2026-09-01</span>
-    <h3>XCOR 12K – przewodnik po jednomrazowym e-papierosie</h3>
-    <p>XCOR 12K to jeden z najbardziej rozpoznawalnych jednorazowych e-papierosów na polskim rynku vape.</p>
-    <span class="article-more">Czytaj dalej <span aria-hidden="true">→</span></span>
-  </a>
-</article><article class="article-card">
-  <a class="article-link" href="/blog/xcor-23k-czy-warto-kupic-ten-jednorazowy-e-papieros/">
-    <span class="article-kicker">2026-08-31</span>
-    <h3>XCOR 23K – czy warto kupić ten jednorazowy e-papieros?</h3>
-    <p>XCOR 23K to jednorazowy e-papieros, który w ostatnim czasie zdoby ogromn popularno wród polskich uytkowników.</p>
-    <span class="article-more">Czytaj dalej <span aria-hidden="true">→</span></span>
-  </a>
-</article><article class="article-card">
-  <a class="article-link" href="/blog/xcor-dubai-knight-28000-opis-jednorazowego-e-papierosa/">
-    <span class="article-kicker">2026-09-01</span>
-    <h3>XCOR Dubai Knight 28000 - opis jednorazowego e-papierosa</h3>
-    <p>XCOR Dubai Knight 28000 to najnowszy jednorazowy e-papieros w ofercie marki XCOR, zaprojektowany z mysla o uzytkownikach ceniacych długotrwałą</p>
-    <span class="article-more">Czytaj dalej <span aria-hidden="true">→</span></span>
-  </a>
-</article><article class="article-card">
-  <a class="article-link" href="/blog/xcor-dubai-night-28000-co-to-za-model/">
-    <span class="article-kicker">2026-09-22</span>
-    <h3>XCOR Dubai Night 28000 – co to za model?</h3>
-    <p>Wpisujesz w wyszukiwarkę „XCOR Dubai Night” albo „Dubai Night 28000” i liczysz na to, że w naszym katalogu jest dokładnie taki wariant: jednorazówka</p>
+  <a class="article-link" href="/blog/papieros-xcor-czy-warto-wybrac-ten-jednorazowy-e-papieros/">
+    <span class="article-kicker">2026-08-30</span>
+    <h3>Papieros XCOR – czy warto wybrać ten jednorazowy e-papieros?</h3>
+    <p>Papieros XCOR to seria jednorazowych e-papierosów, które wyróżniają się dużą liczbą zaciągnięć i bogatą paletą smaków.</p>
     <span class="article-more">Czytaj dalej <span aria-hidden="true">→</span></span>
   </a>
 </article></div></section><section class="block alt" id="faq"><div class="block-head"><div><span class="kicker sm">Masz pytania?</span><h2>Częste pytania</h2></div><a class="more" href="/faq/">Pełne FAQ →</a></div><div class="faq-list"><details><summary>Ile kosztują produkty XCOR na vapepl.com?</summary><div class='faq-a'>Aktualne ceny XCOR zaczynają się od 55 zł i sięgają 90 zł za sztukę. Przy zakupie 3+ sztuk rabat rośnie do −20% przy 15+ sztukach. Wszystkie zamówienia realizuje vapepl.com.</div></details><details><summary>Ile zaciągnięć oferuje XCOR?</summary><div class='faq-a'>Liczba zaciągnięć zależy od modelu — od 23 000 do 50 000 puffs. Szczegóły każdej serii znajdziesz na stronie modelu.</div></details><details><summary>Jakie modele XCOR są dostępne?</summary><div class='faq-a'>W sprzedaży dostępne są modele: XCOR Hawaii PRO 23000 PUFFS, XCOR TYRANT 23000 PUFFS, XCOR Max 50000 PUFFS. Każdy model występuje w wielu wariantach smakowych — pełną listę znajdziesz w zakładce Produkty.</div></details><details><summary>Czy rabaty ilościowe działają automatycznie?</summary><div class='faq-a'>Tak. Rabat nalicza się automatycznie w koszyku na vapepl.com: 3+ szt. −5%, 5+ szt. −8%, 10+ szt. −12%, 15+ szt. −20%.</div></details><details><summary>Czy strona sprzedaje produkty?</summary><div class='faq-a'>Nie. Ten serwis to przewodnik po produktach XCOR — zamawianie i płatność odbywają się wyłącznie na vapepl.com.</div></details></div></section><section class="cta-panel">
@@ -879,7 +899,7 @@
     <p>Realizacja i płatność wyłącznie na <strong>vapepl.com</strong> — rabaty do −20% naliczają się automatycznie w koszyku.</p>
     <a class="btn-buy lg" href="https://vapepl.com/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=cta-final" target="_blank" rel="noopener">Kup XCOR na VapePL.COM</a>
   </div>
-</section><div class="sticky-cta"><span class="sticky-cta-info">Realizacja i płatność: <b>vapepl.com</b></span><a class="btn-buy" style="text-decoration:none" href="https://vapepl.com/?utm_source=xcor&amp;utm_medium=affiliate&amp;utm_campaign=brand-aff&amp;utm_content=sticky" target="_blank" rel="noopener">Kup na VapePL.COM</a></div>
+</section>
 </main>
 <footer class="site-foot">
   <div class="wrap">
